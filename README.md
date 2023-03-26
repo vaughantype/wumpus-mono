@@ -36,7 +36,7 @@ wumpus: JWST has 6
 
 ...indeed, the [James Webb Space Telescope](https://webb.nasa.gov/)'s primary mirror panels are hexagons.
 
-Asterisk anatomy has been discussed in brilliant detail by Jonothan Hoefler in his blog post [“House of Flying Reference Marks”](https://www.typography.com/blog/house-of-flying-reference-marks).
+Asterisk anatomy has been discussed in brilliant detail by Jonathan Hoefler in his blog post [“House of Flying Reference Marks”](https://www.typography.com/blog/house-of-flying-reference-marks).
 
 ## ¶ Ligatures
 

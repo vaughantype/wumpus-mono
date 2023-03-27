@@ -48,4 +48,4 @@ Wumpus Mono includes the following ligatures:
 
 Free for personal use. Please [contact the author](mailto:underwood@underwood.network) for commercial licensing.
 
-<small>Copyright &copy; 2013 T. E. Vaughan. All rights reserved.</small>
+<small>Copyright &copy; 2023 T. E. Vaughan. All rights reserved.</small>

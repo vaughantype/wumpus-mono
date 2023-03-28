@@ -1,8 +1,6 @@
 ![Wumpus Mono Logo](images/WumpusMono_Logo_Inv.png)
 
-# Wumpus Mono
-
-Wumpus Mono is a modern and functional monospaced typeface with a focus on legibility.
+**Wumpus Mono** is a modern and functional monospaced typeface with a focus on legibility.
 
 More glyphs and ligatures are planned for future release, along with multiple weights, matching italics, and variable font.
 

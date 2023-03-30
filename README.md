@@ -4,7 +4,7 @@
 
 More glyphs and ligatures are planned for future release, along with multiple weights, matching italics, and variable font.
 
-Current version: 1.006.
+Current version: 1.009.
 
 ## ¶ Introduction
 

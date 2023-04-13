@@ -1,16 +1,36 @@
 ![Wumpus Mono Logo](images/WumpusMono_Logo_Inv.png)
 
-**Wumpus Mono** is a modern and functional monospaced typeface with a focus on legibility.
+<a href="https://vaughantype.com/wumpus-mono-pro" target="_blank">**Wumpus Mono**</a> is a modern and functional monospaced typeface with a focus on legibility.
 
-More glyphs and ligatures are planned for future release, along with multiple weights, matching italics, and variable font.
-
-Current version: 1.009.
+Current version: 1.022.
 
 ## ¶ Introduction
 
 Wumpus Mono was designed to be easily legible at very small point sizes, and is influenced by fonts such as IBM's [Plex](https://github.com/IBM/plex) and the wonderful Susan Kare's [Chicago](https://en.wikipedia.org/wiki/Chicago_(typeface)).
 
-![Wumpus Mono Specimen](images/WumpusMono_Overview_Specimen.png)
+Regular 400 Roman
+![Wumpus Mono Regular Specimen](images/WumpusMono_Regular_Specimen.png)
+
+### [OpenType Stylistic Sets](https://learn.microsoft.com/en-us/typography/opentype/spec/features_pt#ssxx)
+
+### `g.ss01` Single-storey (opentail) g
+
+![Wumpus Mono Alternative g](images/WumpusMono_Alternative-g.png)
+
+### `g.ss02` Single-storey a
+
+![Wumpus Mono Alternative a](images/WumpusMono_Alternative-a.png)
+
+
+### `g.ss03` Single-footed l
+
+![Wumpus Mono Alternative l](images/WumpusMono_Homoglyphs.png)
+
+ _(The above shows the 400 Italic, and multiple weights below, which are not available in the evaluation version in this repository.  Please see [the font's site](https://vaughantype.com/wumpus-mono-pro) for more information.)_
+
+<hr>
+
+## ¶ Programming with Wumpus Mono
 
 Many of the decisions that were made in the process of designing this font were made in consideration of how it might look when writing Perl programs, since that is often what takes up the majority of my screen's real-estate.
 
@@ -38,12 +58,20 @@ Asterisk anatomy has been discussed in brilliant detail by Jonathan Hoefler in h
 
 ## ¶ Ligatures
 
-Wumpus Mono includes the following ligatures:
+Wumpus Mono includes the following programming ligatures:
 
 ![Wumpus Mono Ligatures](images/WumpusMono_Ligatures.png)
 
+... and the following common ligatures:
+
+![Wumpus Mono Common Ligatures](images/WumpusMono_Common_Ligatures.png)
+
 ## ¶ License
 
-Free for personal use. Please [contact the author](mailto:underwood@underwood.network) for commercial licensing.
+The fonts in this repository are free for personal evaluation purposes.
 
-<small>Copyright &copy; 2023 T. E. Vaughan. All rights reserved.</small>
+Wumpus Mono Pro licenses are available for purchase from [vaughantype.com](https://vaughantype.com) and are licensed under the [Standard Vaughan Type End User Font License Version 1.0](https://vaughantype.com/standard-eula/).
+
+Please [contact the author](mailto:fonts@vaughantype.com) for custom licensing if necessary.
+
+<small>Copyright &copy; 2023 T. E. Vaughan // Vaughan Type. All rights reserved.</small>

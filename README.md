@@ -17,16 +17,16 @@ Regular 400 Roman
 
 ![Wumpus Mono Alternative g](images/WumpusMono_Alternative-g.png)
 
-### `g.ss02` Single-storey a
+### `a.ss02` Single-storey a
 
 ![Wumpus Mono Alternative a](images/WumpusMono_Alternative-a.png)
 
 
-### `g.ss03` Single-footed l
+### `l.ss03` Single-footed l
 
 ![Wumpus Mono Alternative l](images/WumpusMono_Homoglyphs.png)
 
- _(The above shows the 400 Italic, and multiple weights below, which are not available in the evaluation version in this repository.  Please see [the font's site](https://vaughantype.com/wumpus-mono-pro) for more information.)_
+ _(The above shows the 400 Italic, and multiple weights below, which are not available in the evaluation version in this repository.  Please see [the typeface's site](https://vaughantype.com/wumpus-mono-pro) for more information.)_
 
 <hr>
 

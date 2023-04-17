@@ -9,7 +9,7 @@ Current version: 1.022.
 Wumpus Mono was designed to be easily legible at very small point sizes, and is influenced by fonts such as IBM's [Plex](https://github.com/IBM/plex) and the wonderful Susan Kare's [Chicago](https://en.wikipedia.org/wiki/Chicago_(typeface)).
 
 Regular 400 Roman
-![Wumpus Mono Regular Specimen](images/WumpusMono_Regular_Specimen.png)
+![Wumpus Mono Regular Specimen](images/WumpusMono_Overview_Specimen.png)
 
 ### [OpenType Stylistic Sets](https://learn.microsoft.com/en-us/typography/opentype/spec/features_pt#ssxx)
 

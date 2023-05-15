@@ -6,7 +6,7 @@ Current version: 1.022.
 
 ## ¶ Introduction
 
-Wumpus Mono was designed to be easily legible at very small point sizes, and is influenced by fonts such as IBM's [Plex](https://github.com/IBM/plex) and the wonderful Susan Kare's [Chicago](https://en.wikipedia.org/wiki/Chicago_(typeface)).
+Wumpus Mono was designed to be easily legible at very small point sizes, and is influenced by typefaces such as IBM's [Plex](https://github.com/IBM/plex) and the wonderful Susan Kare's [Chicago](https://en.wikipedia.org/wiki/Chicago_(typeface)).
 
 Regular 400 Roman
 ![Wumpus Mono Regular Specimen](images/WumpusMono_Overview_Specimen.png)
@@ -32,7 +32,7 @@ Regular 400 Roman
 
 ## ¶ Programming with Wumpus Mono
 
-Many of the decisions that were made in the process of designing this font were made in consideration of how it might look when writing Perl programs, since that is often what takes up the majority of my screen's real-estate.
+Many of the decisions that were made in the process of designing this typeface were made in consideration of how it might look when writing Perl programs, since that is often what takes up the majority of my screen's real-estate.
 
 ![Wumpus Mono Sample](images/WumpusMono_Sample.png)
 

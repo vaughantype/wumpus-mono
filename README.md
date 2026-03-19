@@ -66,6 +66,35 @@ Wumpus Mono includes the following programming ligatures:
 
 ![Wumpus Mono Common Ligatures](images/WumpusMono_Common_Ligatures.png)
 
+## ¶ Nerd Fonts
+
+A patched variant of Wumpus Mono is now available (`WumpusMonoNerdFontMono-Regular.ttf`) with over 10,000 additional glyphs from the [Nerd Fonts](https://www.nerdfonts.com/) project.  The patched font was generated with `--complete --mono`, which includes:
+
+- **Powerline** & **Powerline Extra** — status-line and prompt glyphs
+- **Font Awesome** & **Font Awesome Extension** — scalable vector icons
+- **Devicons** — programming language and tool logos
+- **Octicons** — GitHub's icon set
+- **Material Design Icons** — Google's material icon library
+- **Weather Icons** — weather and meteorological symbols
+- **Seti UI** — file-type icons used by many editors
+- **Codicons** — VS Code's built-in icon set
+- **Pomicons** — Pomodoro technique icons
+
+The Mono variant (`NerdFontMono`) keeps all glyphs within a single character width, so alignment is preserved in terminal emulators and editors.
+
+To re-patch from source (or patch additional weights), run:
+
+```bash
+./scripts/patch-nerd-fonts.sh          # first run — clones patcher & patches
+./scripts/patch-nerd-fonts.sh --force  # re-patch even if output exists
+```
+
+> [!NOTE]
+> Nerd Fonts is maintained by [Ryan L McIntyre](https://github.com/ryanoasis) and contributors.
+>
+> Project page: <https://github.com/ryanoasis/nerd-fonts>
+> Licensed under the MIT License.
+
 ## ¶ License
 
 The fonts in this repository are free for personal evaluation purposes.

@@ -2,7 +2,7 @@
 #
 # patch-nerd-fonts.sh — Patch all Wumpus Mono TTF variants with Nerd Fonts glyphs
 #
-# Usage:  ./scripts/patch-nerd-fonts.sh [--force]
+# Usage:  ./scripts/patch-nerd-fonts.sh [--force] [FILE ...]
 #
 # Requires: fontforge (will attempt to install via system package manager if missing)
 #
@@ -16,9 +16,11 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 NERD_FONTS_DIR="${REPO_ROOT}/.nerd-fonts"
+NERD_FONTS_VERSION="v3.3.0"
 PATCHER="${NERD_FONTS_DIR}/font-patcher"
 OUTPUT_DIR="${REPO_ROOT}/fonts/NerdFont"
 FORCE=false
+INPUT_FILES=()
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -30,9 +32,10 @@ error() { printf '\033[1;31m==> ERROR:\033[0m %s\n' "$*" >&2; exit 1; }
 
 usage() {
     cat <<EOF
-Usage: $(basename "$0") [OPTIONS]
+Usage: $(basename "$0") [OPTIONS] [FILE ...]
 
-Patch all Wumpus Mono TTF variants with Nerd Fonts glyphs.
+Patch Wumpus Mono TTF variants with Nerd Fonts glyphs.
+If no files are given, all .ttf files in the repo root are patched.
 
 Options:
   --force    Re-patch even if output fonts already exist
@@ -49,7 +52,8 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --force) FORCE=true; shift ;;
         --help)  usage ;;
-        *)       error "Unknown option: $1" ;;
+        -*)      error "Unknown option: $1" ;;
+        *)       INPUT_FILES+=("$1"); shift ;;
     esac
 done
 
@@ -94,16 +98,16 @@ clone_nerd_fonts() {
     info "Sparse-cloning Nerd Fonts patcher …"
     rm -rf "${NERD_FONTS_DIR}"
 
-    git clone --filter=blob:none --sparse \
+    git clone --filter=blob:none --sparse --branch "${NERD_FONTS_VERSION}" --depth 1 \
         https://github.com/ryanoasis/nerd-fonts.git \
         "${NERD_FONTS_DIR}"
 
     pushd "${NERD_FONTS_DIR}" >/dev/null
-    git sparse-checkout set \
-        font-patcher \
-        src/glyphs \
-        src/svgs \
-        bin/scripts/name_parser
+    git sparse-checkout set --no-cone \
+        /font-patcher \
+        /src/glyphs/ \
+        /src/svgs/ \
+        /bin/scripts/name_parser/
     popd >/dev/null
 
     [[ -f "${PATCHER}" ]] || error "font-patcher not found after clone."
@@ -119,9 +123,16 @@ patch_fonts() {
     mkdir -p "${OUTPUT_DIR}"
 
     local ttf_files=()
-    while IFS= read -r -d '' f; do
-        ttf_files+=("$f")
-    done < <(find "${REPO_ROOT}" -maxdepth 1 -name '*.ttf' -print0)
+    if [[ ${#INPUT_FILES[@]} -gt 0 ]]; then
+        for f in "${INPUT_FILES[@]}"; do
+            [[ -f "$f" ]] || error "File not found: $f"
+            ttf_files+=("$f")
+        done
+    else
+        while IFS= read -r -d '' f; do
+            ttf_files+=("$f")
+        done < <(find "${REPO_ROOT}" -maxdepth 1 -name '*.ttf' -print0)
+    fi
 
     if [[ ${#ttf_files[@]} -eq 0 ]]; then
         error "No .ttf files found in ${REPO_ROOT}"

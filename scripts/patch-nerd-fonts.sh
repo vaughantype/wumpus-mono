@@ -174,6 +174,41 @@ patch_fonts() {
 }
 
 # ---------------------------------------------------------------------------
+# 4. Post-process: strip empty braille cmap entries
+#
+# The --complete patch adds cmap entries for U+2800–U+28FF that point to
+# empty glyphs. Those stubs block OS font fallback, so braille characters
+# render as blank boxes in terminals. Remove them.
+# ---------------------------------------------------------------------------
+
+strip_empty_braille() {
+    local cleanup="${REPO_ROOT}/scripts/strip-empty-braille.py"
+    if [[ ! -f "${cleanup}" ]]; then
+        warn "strip-empty-braille.py not found — skipping braille cleanup"
+        return
+    fi
+
+    if ! command -v python3 &>/dev/null; then
+        warn "python3 not found — skipping braille cleanup"
+        return
+    fi
+
+    if ! python3 -c "import fontTools" &>/dev/null; then
+        info "Installing fontTools for braille cleanup …"
+        python3 -m pip install --quiet --user fontTools \
+            || python3 -m pip install --quiet --break-system-packages fontTools \
+            || { warn "could not install fontTools — skipping braille cleanup"; return; }
+    fi
+
+    info "Stripping empty braille cmap entries from patched fonts …"
+    local f
+    for f in "${OUTPUT_DIR}"/*.ttf; do
+        [[ -f "$f" ]] || continue
+        python3 "${cleanup}" "$f"
+    done
+}
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -183,6 +218,7 @@ main() {
     ensure_fontforge
     clone_nerd_fonts
     patch_fonts
+    strip_empty_braille
     info "Done!"
 }
 
